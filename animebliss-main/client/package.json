@@ -100,5 +100,6 @@
     },
     "npmRebuild": false,
     "extends": null
-  }
+  },
+  "homepage": "https://darkcoder-cyber.github.io/SenpaiFlix"
 }

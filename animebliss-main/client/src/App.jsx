@@ -34,7 +34,7 @@ const App = () => {
       }}
     >
       {videoIsLoading && <ClockLoader color={"white"} size={35} />}
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <>
           <BugReporter />
           <Routes>
