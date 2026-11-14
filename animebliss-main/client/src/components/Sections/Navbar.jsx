@@ -166,6 +166,11 @@ const Navbar = () => {
               {watchlistCount > 0 && <span className="watchlist-badge">{watchlistCount}</span>}
             </span>
           </li>
+          <li className={`nav-item ${isActive("/downloads") ? "active" : ""}`}>
+            <span onClick={() => navigate("/downloads")} className="nav-link">
+              Downloads
+            </span>
+          </li>
         </ul>
 
         {/* Live Search Bar */}

@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+**/build/
+**/dist/
+**/dist-desktop/
+**/win-unpacked/
+**/android/.gradle/
+**/android/build/
+**/android/app/build/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+
+# Logs
+npm-debug.log*
+yarn-debug.log*

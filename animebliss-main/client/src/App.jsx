@@ -15,6 +15,7 @@ import RecentPage from "./components/Pages/Recent";
 import SearchResults from "./components/Pages/SearchResults";
 import SignupPage from "./components/Pages/Signup";
 import Watchlist from "./components/Pages/Watchlist";
+import Downloads from "./components/Pages/Downloads";
 import MoreSection from "./components/Sections/MoreSection";
 
 // state for showing and hiding spinner
@@ -40,6 +41,7 @@ const App = () => {
             <Route exact path="/search" element={<SearchResults />} />
             <Route exact path="/recentep" element={<RecentPage></RecentPage>} />
             <Route exact path="/watchlist" element={<Watchlist />} />
+            <Route exact path="/downloads" element={<Downloads />} />
             <Route exact path="/filter" element={<GenresPage />} />
             <Route exact path="/more/:section" element={<MoreSection />} />
             <Route exact path="/watch/:id" element={<AnimePlayerPage />} />
