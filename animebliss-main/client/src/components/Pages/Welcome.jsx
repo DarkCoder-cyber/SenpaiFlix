@@ -127,6 +127,115 @@ const Welcome = () => {
         </aside>
       </section>
 
+      <section className="welcome-downloads" aria-labelledby="welcome-download-title">
+        <div className="welcome-download-heading">
+          <span className="welcome-download-eyebrow">TAKE SENPAIFLIX WITH YOU</span>
+          <h2 id="welcome-download-title">Your universe. Every device.</h2>
+          <p>Choose your platform and get ready for your next anime adventure.</p>
+        </div>
+
+        <div className="welcome-download-grid">
+          <article className="welcome-download-card">
+            <div className="welcome-download-icon" aria-hidden="true">▣</div>
+            <span className="welcome-download-platform">ANDROID</span>
+            <h3>SenpaiFlix for Android</h3>
+            <p>Enjoy SenpaiFlix on your Android device.</p>
+            <a
+              className="welcome-download-link"
+              href="https://github.com/DarkCoder-cyber/SenpaiFlix/releases/download/v1.0.0/app-debug.apk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>View APK releases</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <span className="welcome-download-note">APK release availability may vary.</span>
+          </article>
+
+          <article className="welcome-download-card">
+            <div className="welcome-download-icon" aria-hidden="true">▱</div>
+            <span className="welcome-download-platform">WINDOWS</span>
+            <h3>SenpaiFlix for Windows</h3>
+            <p>Get the desktop installer for your Windows PC.</p>
+            <a
+              className="welcome-download-link"
+              href="https://github.com/DarkCoder-cyber/SenpaiFlix/actions"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>View EXE builds</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <span className="welcome-download-note">Unsigned builds may be blocked by Windows Smart App Control.</span>
+          </article>
+        </div>
+      </section>
+
+      <section className="welcome-about" aria-labelledby="welcome-about-title">
+        <div className="welcome-about-inner">
+          <span className="welcome-about-eyebrow">WELCOME TO YOUR ANIME UNIVERSE</span>
+          <h2 id="welcome-about-title">Discover the World of <span>SenpaiFlix</span></h2>
+          <p className="welcome-about-intro">
+            SenpaiFlix brings your anime experience together in one place.
+            Discover new titles, explore different genres, organise your favourites
+            and enjoy a smooth experience across supported devices.
+          </p>
+
+          <div className="welcome-about-block">
+            <h3>✨ Why Choose SenpaiFlix?</h3>
+            <div className="welcome-about-grid">
+              <article>
+                <span>🎬</span>
+                <h4>Anime Discovery</h4>
+                <p>Explore anime titles and discover stories from different genres.</p>
+              </article>
+              <article>
+                <span>❤️</span>
+                <h4>Your Watchlist</h4>
+                <p>Keep your favourite anime organised in your personal watchlist.</p>
+              </article>
+              <article>
+                <span>▶</span>
+                <h4>Continue Watching</h4>
+                <p>Keep track of your viewing history and pick up where you left off.</p>
+              </article>
+              <article>
+                <span>📥</span>
+                <h4>Offline Library</h4>
+                <p>Access supported offline content when it is available on your device.</p>
+              </article>
+            </div>
+          </div>
+
+          <div className="welcome-about-block">
+            <h3>🌟 Explore Anime Genres</h3>
+            <div className="welcome-genre-list">
+              <span>Action</span>
+              <span>Adventure</span>
+              <span>Fantasy</span>
+              <span>Romance</span>
+              <span>Comedy</span>
+              <span>Mystery</span>
+              <span>Drama</span>
+              <span>Science Fiction</span>
+            </div>
+          </div>
+
+          <div className="welcome-about-block welcome-about-platforms">
+            <h3>📱 Your Anime Experience Across Devices</h3>
+            <p>
+              Explore SenpaiFlix on the web and discover supported Android
+              and Windows versions as they become available.
+            </p>
+          </div>
+
+          <div className="welcome-about-cta">
+            <h3>Your Universe. Your Anime. Your Adventure.</h3>
+            <p>Start exploring SenpaiFlix and discover your next favourite story.</p>
+          </div>
+        </div>
+      </section>
+
       <footer className="welcome-footer">
         <span>© {new Date().getFullYear()} SenpaiFlix</span>
         <span className="welcome-footer-center">A UNIVERSE MADE OF STORIES</span>

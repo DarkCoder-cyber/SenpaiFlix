@@ -1436,3 +1436,591 @@
   border-radius: 50%;
 }
 /* ===== END CENTER LOGO FIT ===== */
+
+/* ===== SENPAIFLIX DOWNLOADS SECTION ===== */
+
+.welcome-downloads {
+  position: relative;
+  z-index: 5;
+  width: min(1000px, 100%);
+  margin: 20px auto 55px;
+  padding: 38px 30px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 24px 70px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.12);
+}
+
+.welcome-download-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.welcome-download-eyebrow,
+.welcome-download-platform {
+  color: rgba(255,255,255,.58);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.welcome-download-heading h2 {
+  margin: 12px 0 8px;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(25px, 4vw, 36px);
+  letter-spacing: -1.2px;
+}
+
+.welcome-download-heading p,
+.welcome-download-card p {
+  color: rgba(255,255,255,.62);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.welcome-download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.welcome-download-card {
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 21px;
+  background: rgba(0,0,0,.24);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.welcome-download-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,.34);
+  background: rgba(255,255,255,.065);
+}
+
+.welcome-download-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 14px;
+  background: rgba(255,255,255,.09);
+  color: #fff;
+  font-size: 25px;
+}
+
+.welcome-download-card h3 {
+  margin: 9px 0 5px;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.welcome-download-card p {
+  min-height: 44px;
+  margin: 0 0 18px;
+}
+
+.welcome-download-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 16px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 13px;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.welcome-download-link:hover {
+  background: rgba(255,255,255,.2);
+  border-color: rgba(255,255,255,.55);
+}
+
+.welcome-download-note {
+  display: block;
+  margin-top: 12px;
+  color: rgba(255,255,255,.46);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .welcome-downloads {
+    margin: 10px auto 35px;
+    padding: 27px 17px;
+    border-radius: 22px;
+  }
+
+  .welcome-download-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .welcome-download-card {
+    padding: 21px;
+  }
+
+  .welcome-download-card p {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-download-card,
+  .welcome-download-link {
+    transition: none;
+  }
+}
+
+/* ===== END SENPAIFLIX DOWNLOADS SECTION ===== */
+
+/* ===== SENPAIFLIX SEO ABOUT SECTION ===== */
+
+.welcome-about {
+  position: relative;
+  z-index: 5;
+  width: min(1100px, 92%);
+  margin: 0 auto 65px;
+  padding: 48px 38px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(0,0,0,.22));
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 24px 70px rgba(0,0,0,.22);
+}
+
+.welcome-about-inner {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.welcome-about-eyebrow {
+  display: block;
+  color: rgba(255,255,255,.52);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-align: center;
+}
+
+.welcome-about-inner > h2 {
+  margin: 13px 0;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  text-align: center;
+}
+
+.welcome-about-inner > h2 span {
+  color: #c5a8ff;
+}
+
+.welcome-about-intro {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  color: rgba(255,255,255,.65);
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.welcome-about-block {
+  margin-top: 38px;
+}
+
+.welcome-about-block > h3 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.welcome-about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.welcome-about-grid article {
+  min-width: 0;
+  padding: 21px 17px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 18px;
+  background: rgba(0,0,0,.2);
+  transition: transform .25s ease, background .25s ease;
+}
+
+.welcome-about-grid article:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,.07);
+}
+
+.welcome-about-grid article > span {
+  font-size: 24px;
+}
+
+.welcome-about-grid h4 {
+  margin: 13px 0 7px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.welcome-about-grid p,
+.welcome-about-platforms p {
+  margin: 0;
+  color: rgba(255,255,255,.57);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.welcome-genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.welcome-genre-list span {
+  padding: 10px 17px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 30px;
+  background: rgba(255,255,255,.055);
+  color: rgba(255,255,255,.82);
+  font-size: 12px;
+  font-weight: 650;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.welcome-genre-list span:hover {
+  border-color: rgba(255,255,255,.4);
+  background: rgba(255,255,255,.12);
+}
+
+.welcome-about-platforms {
+  padding: 23px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 18px;
+  background: rgba(0,0,0,.16);
+}
+
+.welcome-about-cta {
+  margin-top: 38px;
+  padding: 28px 20px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 20px;
+  background: linear-gradient(120deg, rgba(151,111,255,.12), rgba(255,255,255,.035));
+  text-align: center;
+}
+
+.welcome-about-cta h3 {
+  margin: 0 0 9px;
+  color: #fff;
+  font-size: 21px;
+}
+
+.welcome-about-cta p {
+  margin: 0;
+  color: rgba(255,255,255,.58);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  .welcome-about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome-about {
+    width: 94%;
+    margin-bottom: 38px;
+    padding: 30px 19px;
+    border-radius: 22px;
+  }
+
+  .welcome-about-intro {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+
+  .welcome-about-block {
+    margin-top: 29px;
+  }
+
+  .welcome-about-block > h3 {
+    font-size: 17px;
+  }
+
+  .welcome-about-grid {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .welcome-about-grid article {
+    padding: 18px;
+  }
+
+  .welcome-about-platforms {
+    padding: 19px;
+  }
+
+  .welcome-about-cta {
+    padding: 24px 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-about-grid article,
+  .welcome-genre-list span {
+    transition: none;
+  }
+}
+
+/* ===== END SENPAIFLIX SEO ABOUT SECTION ===== */
+
+/* ===== LANDING PAGE PERFORMANCE OPTIMIZATION ===== */
+
+/* Reduce expensive glass blur rendering */
+.welcome-downloads,
+.welcome-about,
+.welcome-stage,
+.welcome-content,
+.welcome-hero,
+.welcome-card,
+.welcome-panel {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Keep lightweight translucent surfaces */
+.welcome-downloads,
+.welcome-about {
+  background: rgba(15, 12, 28, .94);
+}
+
+/* Reduce expensive shadows */
+.welcome-downloads,
+.welcome-about {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .2);
+}
+
+/* Avoid hover movement repaint overhead */
+.welcome-download-card,
+.welcome-about-grid article {
+  transition: border-color .18s ease, background .18s ease;
+}
+
+.welcome-download-card:hover,
+.welcome-about-grid article:hover {
+  transform: none;
+}
+
+/* Respect reduced motion and low-power devices */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-downloads *,
+  .welcome-about *,
+  .welcome-stage * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== END PERFORMANCE OPTIMIZATION ===== */
+
+/* ===== SENPAIFLIX PREMIUM LIQUID GLASS CARDS ===== */
+
+.welcome-side-card,
+.welcome-download-card,
+.welcome-about-grid article,
+.welcome-about-platforms {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.13),
+    rgba(255,255,255,.035) 55%,
+    rgba(255,255,255,.065)
+  ) !important;
+  border: 1px solid rgba(255,255,255,.24) !important;
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.28),
+    inset 0 -1px 1px rgba(255,255,255,.06),
+    0 12px 32px rgba(0,0,0,.22);
+  backdrop-filter: blur(10px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+/* Glossy reflection */
+.welcome-side-card::before,
+.welcome-download-card::before,
+.welcome-about-grid article::before,
+.welcome-about-platforms::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    125deg,
+    rgba(255,255,255,.17),
+    transparent 32%,
+    transparent 70%,
+    rgba(255,255,255,.055)
+  );
+  opacity: .8;
+}
+
+/* Glass highlight on hover */
+.welcome-side-card:hover,
+.welcome-download-card:hover,
+.welcome-about-grid article:hover {
+  border-color: rgba(255,255,255,.48) !important;
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.35),
+    0 16px 38px rgba(0,0,0,.3);
+  transform: translateY(-3px);
+}
+
+/* Keep text above reflection */
+.welcome-side-card > *,
+.welcome-download-card > *,
+.welcome-about-grid article > *,
+.welcome-about-platforms > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: lighter glass for smoother rendering */
+@media (max-width: 760px) {
+  .welcome-side-card,
+  .welcome-download-card,
+  .welcome-about-grid article,
+  .welcome-about-platforms {
+    backdrop-filter: blur(7px) saturate(125%) !important;
+    -webkit-backdrop-filter: blur(7px) saturate(125%) !important;
+  }
+
+  .welcome-side-card:hover,
+  .welcome-download-card:hover,
+  .welcome-about-grid article:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-side-card,
+  .welcome-download-card,
+  .welcome-about-grid article {
+    transition: none;
+  }
+}
+
+/* ===== END LIQUID GLASS CARDS ===== */
+
+/* ===== PREMIUM LIQUID GLASS SHINING EFFECT ===== */
+
+.welcome-side-card,
+.welcome-download-card,
+.welcome-about-grid article {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated diagonal shine */
+.welcome-side-card::after,
+.welcome-download-card::after,
+.welcome-about-grid article::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -80%;
+  width: 55%;
+  height: 300%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: .48;
+  transform: rotate(28deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.04),
+    rgba(255,255,255,.24),
+    rgba(255,255,255,.07),
+    transparent
+  );
+  animation: senpaiGlassShine 7s ease-in-out infinite;
+}
+
+@keyframes senpaiGlassShine {
+  0%, 65% {
+    left: -85%;
+    opacity: 0;
+  }
+  75% {
+    opacity: .48;
+  }
+  100% {
+    left: 145%;
+    opacity: 0;
+  }
+}
+
+/* Glowing top glass edge */
+.welcome-side-card,
+.welcome-download-card,
+.welcome-about-grid article {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.42),
+    inset 0 0 22px rgba(255,255,255,.035),
+    0 12px 35px rgba(0,0,0,.24),
+    0 0 18px rgba(168,85,247,.09);
+}
+
+/* Soft highlight on hover */
+.welcome-side-card:hover,
+.welcome-download-card:hover,
+.welcome-about-grid article:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.65),
+    inset 0 0 28px rgba(255,255,255,.08),
+    0 16px 42px rgba(0,0,0,.3),
+    0 0 25px rgba(168,85,247,.2);
+}
+
+/* Reduce animation on small screens */
+@media (max-width: 600px) {
+  .welcome-side-card::after,
+  .welcome-download-card::after,
+  .welcome-about-grid article::after {
+    animation-duration: 11s;
+    opacity: .3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-side-card::after,
+  .welcome-download-card::after,
+  .welcome-about-grid article::after {
+    animation: none;
+    display: none;
+  }
+}
+
+/* ===== END SHINING EFFECT ===== */

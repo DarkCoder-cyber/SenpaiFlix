@@ -2,6 +2,31 @@
 
 **Your anime universe: discover, explore, and watch.**
 
+## 📥 Download SenpaiFlix
+
+<p align="center">
+  <a href="https://github.com/DarkCoder-cyber/SenpaiFlix/releases/download/v1.0.0/app-debug.apk">
+    <img src="https://img.shields.io/badge/Download-Android%20APK-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Download Android APK">
+  </a>
+  <a href="https://github.com/DarkCoder-cyber/SenpaiFlix/actions">
+    <img src="https://img.shields.io/badge/Windows-Builds-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows Builds">
+  </a>
+</p>
+
+### Android
+- **[Download SenpaiFlix APK](https://github.com/DarkCoder-cyber/SenpaiFlix/releases/download/v1.0.0/app-debug.apk)**
+- [View all releases](https://github.com/DarkCoder-cyber/SenpaiFlix/releases)
+
+> **Note:** v1.0.0 currently contains a debug-build APK. It is intended for testing, not a production-signed release.
+
+### Windows
+- [View Windows build workflow](https://github.com/DarkCoder-cyber/SenpaiFlix/actions)
+- Windows EXE availability depends on successful workflow builds.
+
+---
+
+
+
 SenpaiFlix is a React-based anime discovery and streaming interface. Browse anime, search titles, explore categories, manage a watchlist, and open available episodes.
 
 > Anime catalogs, metadata, and video playback may depend on third-party APIs and providers. Their availability can change.
@@ -66,8 +91,8 @@ git --version
 Clone the repository and install the client dependencies:
 
 ```bash
-git clone <your-repository-url>
-cd <repository-folder>/client
+git clone https://github.com/DarkCoder-cyber/SenpaiFlix.git
+cd SenpaiFlix/animebliss-main/client
 npm install
 ```
 
