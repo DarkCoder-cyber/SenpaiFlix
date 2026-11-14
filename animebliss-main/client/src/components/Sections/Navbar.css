@@ -666,3 +666,31 @@
 }
 
 /* ===== END 3D GLASS CUBE NAVIGATION ===== */
+
+/* ===== SENPAIFLIX LOGO FIT FIX ===== */
+.nav-brand {
+  gap: 12px;
+}
+
+.nav-brand-logo {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 12px;
+  background: #050505;
+  padding: 2px;
+  box-sizing: border-box;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.16));
+}
+
+@media (max-width: 600px) {
+  .nav-brand-logo {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+}
+/* ===== END LOGO FIT FIX ===== */

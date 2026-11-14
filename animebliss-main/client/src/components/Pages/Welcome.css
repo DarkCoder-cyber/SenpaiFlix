@@ -1389,3 +1389,50 @@
 .welcome-continue:active {
   transform: translate3d(var(--magnet-x, 0px), var(--magnet-y, 0px), 0) scale(.97) !important;
 }
+
+/* ===== SENPAIFLIX WELCOME LOGO FIT ===== */
+.welcome-brand img {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 13px;
+  background: #050505;
+  padding: 2px;
+  box-sizing: border-box;
+  filter: drop-shadow(0 0 9px rgba(255, 255, 255, .18));
+}
+
+@media (max-width: 600px) {
+  .welcome-brand img {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+}
+/* ===== END WELCOME LOGO FIT ===== */
+
+/* ===== CENTER LANDING LOGO FIT ===== */
+.welcome-emblem-ring {
+  overflow: hidden;
+  padding: 7px;
+  box-sizing: border-box;
+  background: #050505;
+  border-color: rgba(255, 255, 255, .65);
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, .12),
+    inset 0 0 15px rgba(255, 255, 255, .06);
+}
+
+.welcome-emblem-ring img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 50%;
+}
+/* ===== END CENTER LOGO FIT ===== */

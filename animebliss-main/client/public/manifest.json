@@ -1,25 +1,22 @@
 {
-  "short_name": "Animebliss",
-  "name": "Watch anime, no ads",
+  "short_name": "SenpaiFlix",
+  "name": "SenpaiFlix - Anime Streaming",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "logo.png",
+      "sizes": "736x736",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "favicon.ico",
-      "type": "image/x-icon",
-      "sizes": "192x192"
-    },
-    {
-      "src": "favicon.ico",
-      "type": "image/x-icon",
-      "sizes": "192x192"
+      "src": "logo.png",
+      "sizes": "736x736",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#090912",
+  "background_color": "#090912"
 }

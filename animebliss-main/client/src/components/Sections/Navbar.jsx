@@ -10,7 +10,7 @@ import {
 } from "@ant-design/icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
-import logo from "../../assets/images/logo.webp";
+import logo from "../../assets/images/logo.png";
 import { getWatchlist, getUserProfile, saveUserProfile } from "../../services/storage";
 import { animeKaiApi } from "../../services/api";
 import toast, { Toaster } from "react-hot-toast";
