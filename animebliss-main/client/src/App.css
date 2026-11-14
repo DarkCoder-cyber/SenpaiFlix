@@ -1,0 +1,382 @@
+/* AnimeBliss Production Streaming Theme & Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Surfaces & Canvas */
+  --bg-primary: #0b0c10;
+  --bg-secondary: #0f1218;
+  --bg-card: #141720;
+  --bg-card-hover: #191d28;
+  --bg-elevated: #1e2230;
+  --glass-bg: rgba(15, 18, 26, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  /* Brand Accents - Clean, modern streaming indigo */
+  --accent: #6366f1;
+  --accent-rgb: 99, 102, 241;
+  --accent-light: #818cf8;
+  --accent-dark: #4f46e5;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --accent-gradient-cyan: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+
+  /* Typography */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0b0c10;
+
+  /* UI Borders & Shadows */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(255, 255, 255, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 4px 16px -2px rgba(99, 102, 241, 0.25);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  --transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  --transition-smooth: all 0.25s ease-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-margin-top: 80px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Links & Buttons defaults */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Utility Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+  }
+}
+
+/* Glassmorphism card helpers */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Carousel fixes & resets */
+.rec-carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rec.rec-arrow {
+  background-color: rgba(15, 18, 26, 0.9) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: var(--transition) !important;
+}
+
+.rec.rec-arrow:hover:enabled {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.rec-dot {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.rec-dot_active {
+  background: #ffffff !important;
+  box-shadow: none !important;
+  transform: scale(1.15) !important;
+}
+
+/* ===== SENPAIFLIX LIQUID GLASS DESIGN SYSTEM ===== */
+
+:root {
+  --bg-primary: #090912;
+  --bg-secondary: #10101c;
+  --bg-card: rgba(255, 255, 255, 0.055);
+  --bg-card-hover: rgba(255, 255, 255, 0.10);
+  --bg-elevated: rgba(255, 255, 255, 0.10);
+
+  --glass-bg: rgba(25, 25, 42, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.14);
+
+  --accent: #9b7cff;
+  --accent-rgb: 155, 124, 255;
+  --accent-light: #c4adff;
+  --accent-dark: #7554dc;
+  --accent-gradient: linear-gradient(135deg, #a78bfa, #6366f1);
+
+  --text-primary: #ffffff;
+  --text-secondary: #b5b2c7;
+  --text-muted: #858198;
+
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --border-highlight: rgba(255, 255, 255, 0.25);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-md: 0 10px 35px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+html {
+  background: var(--bg-primary);
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 10% 5%, rgba(112, 78, 200, 0.16), transparent 38%),
+    radial-gradient(ellipse at 90% 35%, rgba(67, 91, 180, 0.10), transparent 35%),
+    var(--bg-primary);
+  background-attachment: fixed;
+}
+
+.glass-panel {
+  background: rgba(24, 24, 42, 0.58);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(155, 124, 255, 0.45);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== END SENPAIFLIX DESIGN SYSTEM ===== */
+
+/* ===== SENPAIFLIX LIQUID GLASS DESIGN SYSTEM ===== */
+
+:root {
+  --bg-primary: #090912;
+  --bg-secondary: #10101c;
+  --bg-card: rgba(255, 255, 255, 0.055);
+  --bg-card-hover: rgba(255, 255, 255, 0.10);
+  --bg-elevated: rgba(255, 255, 255, 0.10);
+
+  --glass-bg: rgba(25, 25, 42, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.14);
+
+  --accent: #9b7cff;
+  --accent-rgb: 155, 124, 255;
+  --accent-light: #c4adff;
+  --accent-dark: #7554dc;
+  --accent-gradient: linear-gradient(135deg, #a78bfa, #6366f1);
+
+  --text-primary: #ffffff;
+  --text-secondary: #b5b2c7;
+  --text-muted: #858198;
+
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --border-highlight: rgba(255, 255, 255, 0.25);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-md: 0 10px 35px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+html {
+  background: var(--bg-primary);
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 10% 5%, rgba(112, 78, 200, 0.16), transparent 38%),
+    radial-gradient(ellipse at 90% 35%, rgba(67, 91, 180, 0.10), transparent 35%),
+    var(--bg-primary);
+  background-attachment: fixed;
+}
+
+.glass-panel {
+  background: rgba(24, 24, 42, 0.58);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(155, 124, 255, 0.45);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== END SENPAIFLIX DESIGN SYSTEM ===== */
+
+/* ===== SENPAIFLIX CAROUSEL HOVER CLIPPING FIX ===== */
+
+/* Allow carousel outer wrappers to show elevated cards */
+.carouselinstance,
+.carouselinstance .rec-carousel-wrapper,
+.carouselinstance .rec-carousel {
+  overflow: visible !important;
+}
+
+/* Create extra vertical room inside the slider viewport */
+.carouselinstance .rec-slider-container {
+  box-sizing: border-box !important;
+  padding-top: 24px !important;
+  padding-bottom: 40px !important;
+  margin-top: -24px !important;
+  margin-bottom: -40px !important;
+}
+
+/* Keep individual cards and their hover effects visible */
+.carouselinstance .rec-slider,
+.carouselinstance .rec-item-wrapper {
+  overflow: visible !important;
+}
+
+/* Keep cards above neighboring elements during hover */
+.carouselinstance .animecard-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.carouselinstance .animecard-wrapper:hover {
+  z-index: 100 !important;
+}
+
+
+/* ===== SENPAIFLIX PREMIUM TYPOGRAPHY ===== */
+
+h1, h2, h3, h4, h5, h6,
+.nav-brand-title,
+.animecard-title {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.nav-link,
+button,
+input,
+textarea,
+select {
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-brand-title {
+  font-weight: 800;
+  letter-spacing: -0.065em;
+}

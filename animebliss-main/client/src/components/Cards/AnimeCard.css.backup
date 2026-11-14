@@ -1,0 +1,680 @@
+/* SENPAIFLIX — PERFORMANCE OPTIMIZED CARDS */
+
+.animecard-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 6px 0 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .2s ease;
+}
+
+.animecard-wrapper:hover {
+  transform: translateY(-4px);
+  z-index: 5;
+}
+
+/* POSTER */
+
+.animecard-poster-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(190, 160, 255, .2);
+  border-radius: 15px;
+  background: #11101c;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, .3);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.animecard-wrapper:hover .animecard-poster-container {
+  border-color: rgba(190, 160, 255, .7);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .4),
+              0 0 12px rgba(139, 92, 246, .2);
+}
+
+.animecard-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  opacity: 1;
+}
+
+.animecard-img.loading {
+  opacity: 0;
+}
+
+.animecard-img.loaded {
+  opacity: 1;
+}
+
+.animecard-skeleton {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* PLAY OVERLAY */
+
+.animecard-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background: rgba(12, 8, 25, .25);
+  transition: opacity .18s ease;
+}
+
+.animecard-wrapper:hover .animecard-overlay {
+  opacity: 1;
+}
+
+.animecard-play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  color: white;
+  background: rgba(139, 92, 246, .88);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+  font-size: 1.4rem;
+}
+
+/* TOP BADGES */
+
+.animecard-top-badges {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  right: 9px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.animecard-rating-badge,
+.animecard-bookmark-btn {
+  background: rgba(15, 12, 27, .88);
+  border: 1px solid rgba(255, 255, 255, .14);
+}
+
+.animecard-rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  color: white;
+  font-size: .74rem;
+  font-weight: 700;
+}
+
+.animecard-bookmark-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  border-radius: 50%;
+  color: white;
+  font-size: .9rem;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background .18s ease;
+}
+
+.animecard-bookmark-btn:hover {
+  background: #7c3aed;
+}
+
+.animecard-bookmark-btn.active {
+  border-color: rgba(236, 72, 153, .5);
+  background: rgba(190, 24, 93, .3);
+}
+
+/* EPISODE BADGE */
+
+.animecard-bottom-badge {
+  position: absolute;
+  bottom: 9px;
+  left: 9px;
+  z-index: 5;
+  padding: 5px 8px;
+  border: 1px solid rgba(216, 180, 254, .25);
+  border-radius: 7px;
+  color: white;
+  background: rgba(109, 40, 217, .9);
+  font-size: .66rem;
+  font-weight: 750;
+  letter-spacing: .4px;
+}
+
+/* INFORMATION */
+
+.animecard-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 2px 0;
+}
+
+.animecard-title {
+  display: -webkit-box;
+  min-height: 2.6em;
+  overflow: hidden;
+  color: #f4efff;
+  font-size: .91rem;
+  font-weight: 650;
+  line-height: 1.35;
+  word-break: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: color .18s ease;
+}
+
+.animecard-wrapper:hover .animecard-title {
+  color: #d8b4fe;
+}
+
+.animecard-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: rgba(203, 190, 224, .7);
+  font-size: .75rem;
+}
+
+.animecard-year,
+.animecard-type {
+  display: inline-flex;
+  align-items: center;
+}
+
+.animecard-type::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #a78bfa;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .animecard-wrapper {
+    margin: 4px 0 13px;
+  }
+
+  .animecard-wrapper:hover {
+    transform: none;
+  }
+
+  .animecard-poster-container {
+    border-radius: 12px;
+  }
+
+  .animecard-info {
+    padding-top: 8px;
+  }
+
+  .animecard-title {
+    font-size: .84rem;
+  }
+
+  .animecard-top-badges {
+    top: 7px;
+    left: 7px;
+    right: 7px;
+  }
+
+  .animecard-bookmark-btn {
+    width: 29px;
+    height: 29px;
+  }
+
+  .animecard-bottom-badge {
+    bottom: 7px;
+    left: 7px;
+  }
+}
+
+/* TOUCH DEVICES */
+
+@media (hover: none) {
+  .animecard-overlay {
+    display: none;
+  }
+
+  .animecard-wrapper:hover {
+    transform: none;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .animecard-wrapper,
+  .animecard-poster-container,
+  .animecard-overlay,
+  .animecard-title {
+    transition: none !important;
+  }
+}
+
+/* ===== SENPAIFLIX PREMIUM 3D ANIME CARD EFFECTS ===== */
+
+.animecard-wrapper {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: translateY(0) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+}
+
+.animecard-wrapper:hover {
+  transform: translateY(-7px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  filter: drop-shadow(0 12px 18px rgba(139,92,246,.16));
+}
+
+.animecard-poster-container {
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+.animecard-poster-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255,255,255,.25),
+    rgba(167,139,250,.12) 22%,
+    transparent 58%
+  );
+  transition: opacity .3s ease;
+}
+
+.animecard-wrapper:hover .animecard-poster-container::before {
+  opacity: 1;
+}
+
+.animecard-poster-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+  transition: box-shadow .3s ease;
+}
+
+.animecard-wrapper:hover .animecard-poster-container::after {
+  box-shadow:
+    inset 0 0 0 1px rgba(216,180,254,.65),
+    inset 0 0 25px rgba(139,92,246,.16);
+}
+
+.animecard-img {
+  transform: scale(1);
+  transition: transform .65s cubic-bezier(.2,.7,.2,1), filter .4s ease;
+}
+
+.animecard-wrapper:hover .animecard-img {
+  transform: scale(1.075);
+  filter: saturate(1.12) brightness(.82);
+}
+
+.animecard-overlay {
+  z-index: 3;
+  background: linear-gradient(145deg,rgba(20,10,40,.12),rgba(76,29,149,.35));
+  backdrop-filter: blur(0);
+  transition: opacity .35s ease, backdrop-filter .35s ease;
+}
+
+.animecard-wrapper:hover .animecard-overlay {
+  backdrop-filter: blur(2px);
+}
+
+.animecard-play-btn {
+  opacity: 0;
+  transform: scale(.65);
+  border-color: rgba(255,255,255,.7);
+  background: linear-gradient(145deg,rgba(167,139,250,.95),rgba(109,40,217,.95));
+  box-shadow: 0 0 0 7px rgba(167,139,250,.12), 0 0 30px rgba(139,92,246,.65);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .3s ease;
+}
+
+.animecard-wrapper:hover .animecard-play-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animecard-rating-badge,
+.animecard-bookmark-btn,
+.animecard-bottom-badge {
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 4px 12px rgba(0,0,0,.2);
+}
+
+.animecard-bookmark-btn {
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.animecard-bookmark-btn:hover {
+  transform: scale(1.12);
+  background: rgba(124,58,237,.9);
+  box-shadow: 0 0 18px rgba(168,85,247,.45);
+}
+
+.animecard-wrapper:hover .animecard-title {
+  text-shadow: 0 0 16px rgba(167,139,250,.22);
+}
+
+@media (max-width: 768px), (hover: none) {
+  .animecard-wrapper {
+    transform: none;
+    filter: none;
+  }
+
+  .animecard-wrapper:hover {
+    transform: none;
+  }
+
+  .animecard-play-btn {
+    opacity: 1;
+    transform: scale(.85);
+    width: 38px;
+    height: 38px;
+  }
+
+  .animecard-wrapper:hover .animecard-img {
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animecard-img,
+  .animecard-play-btn,
+  .animecard-wrapper {
+    transition: none !important;
+  }
+}
+
+/* ===== END PREMIUM 3D EFFECTS ===== */
+
+/* ===== ANIMATED GLASS SHINE RESTORATION ===== */
+
+.animecard-poster-container {
+  overflow: hidden;
+}
+
+.animecard-poster-container .animecard-img {
+  position: relative;
+  z-index: 0;
+}
+
+.animecard-poster-container::before {
+  z-index: 4;
+  opacity: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255,255,255,.04) 35%,
+    rgba(255,255,255,.38) 48%,
+    rgba(216,180,254,.18) 53%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+  transition: opacity .3s ease;
+}
+
+.animecard-wrapper:hover .animecard-poster-container::before {
+  opacity: 1;
+  animation: animeCardShine 1s ease forwards;
+}
+
+@keyframes animeCardShine {
+  from { transform: translateX(-130%); }
+  to { transform: translateX(130%); }
+}
+
+.animecard-wrapper:hover .animecard-img {
+  filter: saturate(1.08) brightness(.96);
+}
+
+@media (hover: none) {
+  .animecard-poster-container::before {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animecard-poster-container::before {
+    animation: none !important;
+  }
+}
+
+/* ===== END GLASS SHINE RESTORATION ===== */
+
+/* ===== NATURAL 3D CARD HOVER ===== */
+
+.animecard-wrapper {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  position: relative;
+  perspective: 1100px;
+  transform: translateY(0) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform-style: preserve-3d;
+  transition:
+    transform .22s ease-out,
+    filter .3s ease;
+  will-change: transform;
+}
+
+.animecard-wrapper:hover {
+  transform:
+    translateY(-5px)
+    rotateX(var(--tilt-x))
+    rotateY(var(--tilt-y));
+  filter: drop-shadow(0 12px 20px rgba(139,92,246,.2));
+}
+
+.animecard-poster-container {
+  transform-style: preserve-3d;
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+
+.animecard-wrapper:hover .animecard-poster-container {
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.38),
+    0 0 20px rgba(139,92,246,.24),
+    inset 0 0 0 1px rgba(216,180,254,.4);
+}
+
+.animecard-wrapper:hover .animecard-img {
+  transform: scale(1.045);
+}
+
+@media (max-width: 768px), (hover: none) {
+  .animecard-wrapper,
+  .animecard-wrapper:hover {
+    transform: none;
+    filter: none;
+  }
+}
+
+/* ===== END NATURAL 3D HOVER ===== */
+
+
+/* ===== FINAL 3D DEPTH POLISH ===== */
+
+.animecard-wrapper {
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+.animecard-poster-container {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.animecard-wrapper:hover .animecard-poster-container {
+  transform: translateZ(12px);
+}
+
+.animecard-wrapper:hover .animecard-info {
+  transform: translateY(2px);
+  transition: transform .3s ease;
+}
+
+.animecard-info {
+  transition: transform .3s ease;
+}
+
+@media (max-width: 768px), (hover: none) {
+  .animecard-wrapper:hover .animecard-poster-container {
+    transform: none;
+  }
+
+  .animecard-wrapper:hover .animecard-info {
+    transform: none;
+  }
+}
+
+/* ===== END 3D DEPTH POLISH ===== */
+
+/* ===== CLEAN 3D HOVER - NO BLUR ===== */
+
+.animecard-wrapper {
+  perspective: 1000px;
+  transform: translateY(0) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform .2s ease-out;
+  filter: none !important;
+}
+
+.animecard-wrapper:hover {
+  transform: translateY(-4px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  filter: none !important;
+}
+
+.animecard-poster-container,
+.animecard-wrapper:hover .animecard-poster-container {
+  transform: none;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.animecard-overlay,
+.animecard-rating-badge,
+.animecard-bookmark-btn,
+.animecard-bottom-badge {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.animecard-wrapper:hover .animecard-img {
+  transform: scale(1.025);
+  filter: none;
+}
+
+.animecard-wrapper:hover .animecard-info {
+  transform: none;
+}
+
+.animecard-info {
+  transition: none;
+}
+
+@media (max-width: 768px), (hover: none) {
+  .animecard-wrapper,
+  .animecard-wrapper:hover {
+    transform: none;
+    filter: none !important;
+  }
+}
+
+/* ===== END CLEAN 3D HOVER ===== */
+
+/* ===== SENPAIFLIX FINAL CARD STYLE ===== */
+
+.animecard-wrapper {
+  perspective: 1200px;
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transform-style: preserve-3d;
+  transition: transform .18s ease-out !important;
+  filter: none !important;
+}
+
+.animecard-wrapper:hover {
+  transform: translateY(-5px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  filter: none !important;
+}
+
+.animecard-poster-container {
+  position: relative;
+  transform: none !important;
+  transition: border-color .25s ease, box-shadow .25s ease !important;
+}
+
+.animecard-wrapper:hover .animecard-poster-container {
+  border-color: rgba(196, 181, 253, .85);
+  box-shadow: 0 10px 25px rgba(0,0,0,.28), 0 0 14px rgba(139,92,246,.2);
+}
+
+.animecard-img,
+.animecard-wrapper:hover .animecard-img {
+  filter: none !important;
+  transform: scale(1.025);
+  transition: transform .35s ease !important;
+}
+
+.animecard-overlay {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.animecard-rating-badge,
+.animecard-bookmark-btn,
+.animecard-bottom-badge {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.animecard-wrapper:hover .animecard-play-btn {
+  transform: scale(1);
+}
+
+@media (max-width: 768px), (hover: none) {
+  .animecard-wrapper,
+  .animecard-wrapper:hover {
+    transform: none !important;
+  }
+
+  .animecard-img,
+  .animecard-wrapper:hover .animecard-img {
+    transform: none !important;
+  }
+}
+
+/* ===== END FINAL CARD STYLE ===== */

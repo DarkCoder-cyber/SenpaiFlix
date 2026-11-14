@@ -1,0 +1,122 @@
+.filter-page-root {
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+
+.filter-container {
+  max-width: 1680px;
+  margin: 100px auto 40px;
+  padding: 0 28px;
+}
+
+.filter-header {
+  margin-bottom: 35px;
+}
+
+.filter-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.filter-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.filter-category-section {
+  margin-bottom: 36px;
+}
+
+.filter-section-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-section-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background: var(--accent-gradient);
+  border-radius: 4px;
+}
+
+.filter-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.filter-card {
+  position: relative;
+  height: 130px;
+  border-radius: 12px;
+  background-color: var(--bg-card);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.filter-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px -2px rgba(0, 0, 0, 0.5);
+}
+
+.filter-card-title {
+  position: relative;
+  z-index: 2;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(10, 11, 16, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  transition: all 0.2s ease;
+}
+
+.filter-card:hover .filter-card-title {
+  background: var(--accent-primary);
+  border-color: var(--accent-light);
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-container {
+    padding: 0 16px;
+    margin-top: 85px;
+  }
+  .filter-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  .filter-card {
+    height: 100px;
+    padding: 12px;
+  }
+  .filter-card-title {
+    font-size: 0.95rem;
+  }
+}

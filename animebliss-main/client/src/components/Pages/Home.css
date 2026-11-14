@@ -1,0 +1,312 @@
+.home-page {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-upcoming,
+.section-anime,
+.section-infinite {
+  margin-top: 14px;
+}
+
+.row-title {
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 28px;
+  margin-bottom: 14px;
+}
+
+.row-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background: var(--accent-gradient);
+  border-radius: 4px;
+}
+
+.more-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.2s ease;
+}
+
+.more-button:hover {
+  background: rgba(139, 92, 246, 0.25);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateX(3px);
+}
+
+.modal-video-body {
+  max-width: 900px !important;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .row-title {
+    font-size: 1.3rem;
+    margin-left: 16px;
+  }
+  .more-button {
+    font-size: 0.85rem;
+    margin-right: 16px;
+    padding: 4px 10px;
+  }
+}
+
+/* =========================================
+   SENPAIFLIX — PREMIUM HOME REDESIGN
+========================================= */
+
+.home-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  padding-bottom: 90px;
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 5% 12%, rgba(124, 58, 237, .13), transparent 34%),
+    radial-gradient(ellipse at 95% 48%, rgba(99, 102, 241, .09), transparent 32%);
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-upcoming,
+.section-anime,
+.section-infinite {
+  position: relative;
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.row-title {
+  position: relative;
+  color: #f7f2ff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  font-weight: 750;
+  letter-spacing: -.55px;
+  gap: 12px;
+  margin-left: 32px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(168, 85, 247, .16);
+}
+
+.row-title::before {
+  width: 4px;
+  height: 25px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #e9d5ff, #a855f7 55%, #6366f1);
+  box-shadow: 0 0 14px rgba(168, 85, 247, .65);
+}
+
+.more-button {
+  margin-right: 30px;
+  padding: 8px 15px;
+  border: 1px solid rgba(216, 180, 254, .2);
+  border-radius: 14px;
+  color: #e9d5ff;
+  background: linear-gradient(135deg, rgba(168, 85, 247, .13), rgba(99, 102, 241, .08));
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .1);
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.more-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(216, 180, 254, .48);
+  color: #fff;
+  background: rgba(147, 51, 234, .24);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, .2), inset 0 1px rgba(255,255,255,.16);
+}
+
+.modal-video-body {
+  border: 1px solid rgba(216, 180, 254, .2);
+  border-radius: 22px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .5);
+}
+
+/* Soft separation between content sections */
+.home-content > section {
+  scroll-margin-top: 100px;
+}
+
+/* Responsive layout */
+@media (min-width: 1500px) {
+  .home-content {
+    gap: 42px;
+  }
+
+  .row-title {
+    margin-left: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    padding-bottom: 65px;
+  }
+
+  .home-content {
+    gap: 25px;
+  }
+
+  .row-title {
+    font-size: 1.25rem;
+    margin-left: 17px;
+    margin-bottom: 15px;
+    gap: 9px;
+  }
+
+  .row-title::before {
+    height: 21px;
+  }
+
+  .more-button {
+    font-size: .8rem;
+    margin-right: 16px;
+    padding: 6px 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .more-button {
+    transition: none !important;
+  }
+}
+
+
+/* SenpaiFlix home footer */
+.senpai-home-footer {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 7% 22px;
+  color: #e9e7f2;
+  background: linear-gradient(135deg, #100d1c, #171126 55%, #0d101b);
+  border-top: 1px solid rgba(174, 112, 255, 0.25);
+}
+
+.home-footer-glow {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 380px;
+  height: 180px;
+  background: rgba(147, 67, 255, 0.2);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.home-footer-top {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-footer-brand h2 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.home-footer-brand h2 span {
+  color: #bd79ff;
+}
+
+.home-footer-brand p,
+.home-footer-column p {
+  color: #aaa5b8;
+  line-height: 1.7;
+}
+
+.home-footer-description {
+  max-width: 340px;
+}
+
+.home-footer-column h3 {
+  margin: 5px 0 18px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.home-footer-column a {
+  display: block;
+  width: fit-content;
+  margin: 0 0 12px;
+  color: #aaa5b8;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.home-footer-column a:hover {
+  color: #d1a5ff;
+  transform: translateX(4px);
+}
+
+.home-footer-bottom {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 38px auto 0;
+  padding-top: 18px;
+  color: #898497;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 760px) {
+  .home-footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+
+  .home-footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .senpai-home-footer {
+    padding: 40px 6% 20px;
+  }
+
+  .home-footer-top {
+    grid-template-columns: 1fr;
+  }
+}

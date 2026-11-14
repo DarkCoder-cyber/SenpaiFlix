@@ -1,0 +1,594 @@
+.player-page-root {
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+
+.player-main-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
+  max-width: 1680px;
+  margin: 90px auto 30px;
+  padding: 0 24px;
+}
+
+/* Left Column */
+.player-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.video-player-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-subtle);
+}
+
+.player-loading-skeleton {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-light);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.player-error-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--text-secondary);
+}
+
+.error-btn-next {
+  background: var(--accent-gradient);
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+}
+
+/* Player Server / Provider Bar */
+.player-server-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  margin-bottom: -4px;
+}
+
+.server-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.server-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.server-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.server-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.server-chip.active {
+  background: #ffffff;
+  color: #0b0c10;
+  border-color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Player Control Bar */
+.player-control-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+}
+
+.ep-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ep-ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.ep-ctrl-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ep-ctrl-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.current-ep-pill {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+.player-options-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.autonext-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.autonext-toggle input {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.player-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.player-action-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.player-action-btn.active {
+  background: rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.5);
+}
+
+/* Anime Details Card */
+.anime-details-card {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.anime-page-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.anime-genres-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genre-chip {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: var(--accent-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.genre-chip:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.anime-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.meta-badge.rating-badge {
+  color: #fde047;
+  font-weight: 700;
+}
+
+.meta-badge.status-badge {
+  color: #86efac;
+  font-weight: 700;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.anime-synopsis-section {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.synopsis-text {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Seasons & Related Section */
+.anime-relations-section {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+}
+
+.relations-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.relation-chip-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.relation-chip-card:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.relation-type-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  background: rgba(139, 92, 246, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.relation-title-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.anime-extra-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.88rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+}
+
+.info-item {
+  display: flex;
+  gap: 6px;
+}
+
+.info-label {
+  color: var(--text-muted);
+}
+
+.info-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Right Column: Episode Browser Panel */
+.player-right-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.episode-browser-panel {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  max-height: 680px;
+  height: 100%;
+}
+
+.ep-browser-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ep-browser-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.episode-sources-empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+.ep-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ep-search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.ep-search-input {
+  width: 100%;
+  padding: 7px 12px 7px 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.ep-search-input:focus {
+  border-color: var(--accent);
+}
+
+.ep-batch-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.ep-batch-tab {
+  white-space: nowrap;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.ep-batch-tab.active {
+  background: #ffffff;
+  color: #0b0c10;
+  font-weight: 700;
+}
+
+.episodes-grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 8px;
+  overflow-y: auto;
+  max-height: 520px;
+  padding-right: 4px;
+}
+
+.ep-card-item {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+  position: relative;
+}
+
+.ep-card-item:hover:not(.current) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.ep-card-item.current {
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  color: #0b0c10;
+}
+
+.ep-number {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.ep-active-icon {
+  font-size: 0.65rem;
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .player-main-layout {
+    grid-template-columns: 1fr;
+  }
+  .episode-browser-panel {
+    max-height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .player-main-layout {
+    padding: 0 14px;
+    margin-top: 80px;
+  }
+  .anime-page-title {
+    font-size: 1.4rem;
+  }
+  .player-control-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ep-nav-buttons,
+  .player-options-bar {
+    justify-content: space-between;
+  }
+}
+
+/* ===== SENPAIFLIX EPISODE LIQUID GLASS CAPSULE ===== */
+.ep-batch-tabs {
+  position: relative;
+  isolation: isolate;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 5px;
+  gap: 6px;
+  border-radius: 999px;
+  background: rgba(15, 12, 28, 0.62);
+  border: 1px solid rgba(190, 150, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.07),
+              0 8px 30px rgba(0,0,0,0.22);
+}
+
+.ep-batch-tabs .liquid-tab-capsule {
+  position: absolute;
+  z-index: 0;
+  top: 5px;
+  bottom: 5px;
+  left: var(--capsule-left, 0px);
+  width: var(--capsule-width, 0px);
+  border-radius: 999px;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(190, 145, 255, 0.32),
+    rgba(126, 76, 220, 0.20),
+    rgba(220, 190, 255, 0.16)
+  );
+  border: 1px solid rgba(220, 190, 255, 0.42);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.32),
+              0 0 14px rgba(168,85,247,0.30),
+              0 0 28px rgba(139,92,246,0.16);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  transition: left 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+              width 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ep-batch-tab {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+  border-radius: 999px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.ep-batch-tab:hover,
+.ep-batch-tab.active {
+  color: #fff;
+  background: transparent !important;
+  transform: translateY(-1px);
+}

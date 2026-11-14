@@ -1,0 +1,292 @@
+/* ===== SENPAIFLIX CINEMATIC HERO ===== */
+
+.herocard-wrapper {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 540px;
+  max-height: 650px;
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  padding: 55px 6%;
+  overflow: hidden;
+  margin-bottom: 28px;
+  border: 1px solid rgba(210, 180, 255, 0.16);
+  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.42);
+}
+
+.herocard-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(8,6,17,.98) 0%, rgba(8,6,17,.88) 28%, rgba(8,6,17,.55) 55%, rgba(8,6,17,.08) 100%),
+    linear-gradient(0deg, rgba(8,6,17,.55) 0%, transparent 45%);
+}
+
+.herocard-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: auto auto -180px -100px;
+  width: 480px;
+  height: 300px;
+  z-index: -1;
+  background: rgba(139, 92, 246, 0.18);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.herocard-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 19px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.herocard-spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  color: #e9ddff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  background: rgba(139, 92, 246, 0.16);
+  border: 1px solid rgba(196, 165, 255, 0.28);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.spotlight-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #a78bfa;
+  box-shadow: 0 0 12px #a78bfa;
+}
+
+.herocard-title {
+  max-width: 620px;
+  color: #fff;
+  font-size: clamp(2.5rem, 4.5vw, 4.4rem);
+  font-weight: 850;
+  line-height: 1.06;
+  letter-spacing: -2px;
+  text-shadow: 0 5px 28px rgba(0, 0, 0, 0.65);
+  word-break: break-word;
+}
+
+.herocard-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #eee8fa;
+  font-size: 0.76rem;
+  font-weight: 650;
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.badge-tv {
+  color: #fff;
+  background: rgba(139, 92, 246, 0.25);
+  border-color: rgba(196, 165, 255, 0.3);
+}
+
+.badge-rating {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  border-color: rgba(251, 191, 36, 0.25);
+}
+
+.badge-quality {
+  color: #d8c7ff;
+  background: rgba(139, 92, 246, 0.16);
+  border-color: rgba(196, 165, 255, 0.22);
+}
+
+.herocard-description {
+  max-width: 560px;
+  color: rgba(241, 236, 250, 0.82);
+  font-size: 0.96rem;
+  line-height: 1.75;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.herocard-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 5px;
+}
+
+.hero-btn-watch,
+.hero-btn-watchlist {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 49px;
+  padding: 0 25px;
+  border-radius: 999px;
+  font-size: 0.91rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-btn-watch {
+  color: #fff;
+  background: linear-gradient(135deg, #a855f7, #7138d5);
+  border: 1px solid rgba(220, 190, 255, 0.38);
+  box-shadow: 0 8px 28px rgba(139, 92, 246, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.hero-btn-watch:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 34px rgba(139, 92, 246, 0.52);
+}
+
+.hero-btn-watchlist {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.hero-btn-watchlist:hover,
+.hero-btn-watchlist.active {
+  color: #fff;
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgba(196, 165, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+.hero-btn-watchlist.active {
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.16);
+}
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+  .herocard-wrapper {
+    min-height: 470px;
+    padding: 40px 5%;
+    background-position: center;
+  }
+
+  .herocard-content {
+    max-width: 570px;
+    gap: 16px;
+  }
+
+  .herocard-title {
+    font-size: clamp(2.1rem, 5vw, 3.3rem);
+    letter-spacing: -1.2px;
+  }
+
+  .herocard-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .herocard-wrapper {
+    min-height: 460px;
+    max-height: none;
+    padding: 32px 22px;
+    align-items: flex-end;
+    border-radius: 19px;
+    background-position: 62% center;
+  }
+
+  .herocard-wrapper::before {
+    background: linear-gradient(0deg, rgba(8,6,17,.98) 0%, rgba(8,6,17,.86) 42%, rgba(8,6,17,.22) 100%);
+  }
+
+  .herocard-content {
+    gap: 13px;
+  }
+
+  .herocard-spotlight-badge {
+    font-size: 0.65rem;
+    padding: 7px 11px;
+  }
+
+  .herocard-title {
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
+    letter-spacing: -0.8px;
+  }
+
+  .herocard-badges {
+    gap: 7px;
+  }
+
+  .hero-badge {
+    font-size: 0.68rem;
+    padding: 6px 9px;
+  }
+
+  .herocard-description {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    -webkit-line-clamp: 3;
+  }
+
+  .herocard-actions {
+    width: 100%;
+    gap: 9px;
+  }
+
+  .hero-btn-watch,
+  .hero-btn-watchlist {
+    min-height: 45px;
+    padding: 0 15px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-btn-watch,
+  .hero-btn-watchlist {
+    transition: none;
+  }
+}
